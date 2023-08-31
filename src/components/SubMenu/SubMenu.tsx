@@ -1,26 +1,27 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import styles from "./SubMenu.module.css";
 import anime from "animejs";
-import Typewriter, { TypewriterClass } from 'typewriter-effect'
+import { UseTypewriter } from "../../hooks/useTypewriter";
+import { TypewriterHook } from "../../interfaces/TypewriterHook";
+// import { Typewriter } from "../Typewriter/Typewriter";
+// import Typewriter, { TypewriterClass } from 'typewriter-effect'
+
 
 export const SubMenu = () => {
-  
 
   const [displayLine, setDisplayLine] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
+  const [typedElements, setTypedElements]: [TypewriterHook[], Dispatch<SetStateAction<TypewriterHook[]>>] = useState([
+    UseTypewriter({initialDelay: 750, typingSpeed: 100 , text: "LANDING PAGE"}),
+    UseTypewriter({initialDelay: 1500, typingSpeed: 100, text: "ІНТЕРНЕТ-МАГАЗИН"}),
+    UseTypewriter({initialDelay: 2250, typingSpeed: 100, text: "БІЗНЕС САЙТ"})
+  ]);
   
 
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
   };
-
-  const typeEffect = (typewriter: TypewriterClass, str: string, pauseFor: number) => {
-    return typewriter
-      .pauseFor(pauseFor)
-      .typeString(str)
-      .start();
-  }
 
   const animateLine = () => {
     setDisplayLine(true);
@@ -41,13 +42,15 @@ export const SubMenu = () => {
     if (scrollPosition >= 200) {
       setTimeout(() => {
         animateLine();
+
+
       }, 500);
     }
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrollPosition]);
+  }, [scrollPosition, typedElements]);
 
   return (
     <div className={`bg3 ${styles.under_bg}`}>
@@ -73,15 +76,8 @@ export const SubMenu = () => {
             />
           </svg>
           <h4 className={`h4 c1 bold montserrat ${styles.title}`}>
-          <Typewriter
-            options={{
-              cursor: ''
-            }}
-              onInit={(typewriter) => {
-                typeEffect(typewriter, "LANDING PAGE", 1000)
-              }}
-            />
-          </h4>
+            {typedElements[0].typedText}
+          </h4> 
           <svg
             className={styles.line}
             width="11"
@@ -102,14 +98,7 @@ export const SubMenu = () => {
             />
           </svg>
           <h4 className={`h4 c1 bold montserrat ${styles.title}`}>
-            <Typewriter
-              options={{
-                cursor: ''
-              }}
-                onInit={(typewriter) => {
-                  typeEffect(typewriter, "ІНТЕРНЕТ МАГАЗИН", 1500)
-                }}
-              />
+            {/* <Typewriter /> */}
           </h4>
           <svg
             className={styles.line}
@@ -132,14 +121,7 @@ export const SubMenu = () => {
           </svg>
 
           <h4 className={`h4 c1 bold montserrat ${styles.title}`}>
-          <Typewriter
-            options={{
-              cursor: ''
-            }}
-              onInit={(typewriter) => {
-                typeEffect(typewriter, "БІЗНЕС САЙТ", 2250)
-              }}
-            />
+            {/* <Typewriter /> */}
           </h4>
         </div>
       </div>
