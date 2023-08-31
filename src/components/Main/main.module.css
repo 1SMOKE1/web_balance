@@ -35,14 +35,15 @@
 .social_media{
   position: absolute;
   width: 40%;
-  bottom: -12%;
+  bottom: 5%;
   right: 3%;
-  transform: translate(3%, 0%);
+  transform: translate(3%, 5%);
   z-index: 1000;
 }
 
 .content_container{
-  padding: 90px 102.5px 70px 160px
+  position: relative;
+  padding: 90px 102.5px 70px 160px;
 }
 
 .content_container > ul > li {
@@ -51,6 +52,12 @@
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
+  transition: box-shadow .3s ease-out;
+  cursor: pointer;
+}
+
+.content_container > ul > li:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .content_container > ul > li:last-child{
@@ -74,7 +81,7 @@
 }
 
 .form_block input[type=text]{
-  padding: 15px 0 15px 36.4px;
+  padding: 10px 0 10px 36.4px;
 }
 
 .form_block input[type=text]::placeholder{
@@ -84,6 +91,21 @@
 .form_block input[type=text]:focus,
 .form_block button:hover{
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.yellow_line,
+.light_blue_line{
+  position: absolute;
+}
+
+.yellow_line{
+  top: 0;
+  left: 8%;
+}
+
+.light_blue_line{
+  top: 10%;
+  left: 8%;
 }
 
 
