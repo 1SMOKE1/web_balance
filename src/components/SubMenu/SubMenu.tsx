@@ -73,7 +73,7 @@ export const SubMenu = () => {
             />
           </svg>
           <h4 className={`h4 c1 bold montserrat ${styles.title}`} key={0}>
-            <Typewriter text="LANDING PAGE" triggerTyping={startTyping} />
+            <Typewriter text="LANDING PAGE" triggerTyping={startTyping} speed={50}/>
           </h4> 
           <svg
             className={styles.line}
@@ -95,7 +95,7 @@ export const SubMenu = () => {
             />
           </svg>
           <h4 className={`h4 c1 bold montserrat ${styles.title}`} key={1}>
-            <Typewriter text="ІНТЕРНЕТ-МАГАЗИН" triggerTyping={startTyping} />
+            <Typewriter text="ІНТЕРНЕТ-МАГАЗИН" triggerTyping={startTyping} speed={150}/>
           </h4>
           <svg
             className={styles.line}
@@ -118,7 +118,7 @@ export const SubMenu = () => {
           </svg>
 
           <h4 className={`h4 c1 bold montserrat ${styles.title}`} key={2}>
-          
+            <Typewriter text="БІЗНЕС САЙТ" triggerTyping={startTyping} speed={225}/>
           </h4>
         </div>
       </div>
