@@ -1,22 +1,16 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./SubMenu.module.css";
 import anime from "animejs";
-import { UseTypewriter } from "../../hooks/useTypewriter";
-import { TypewriterHook } from "../../interfaces/TypewriterHook";
-// import { Typewriter } from "../Typewriter/Typewriter";
-// import Typewriter, { TypewriterClass } from 'typewriter-effect'
+import { Typewriter } from "../Typewriter/Typewriter";
+
+
 
 
 export const SubMenu = () => {
 
   const [displayLine, setDisplayLine] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
-
-  const [typedElements, setTypedElements]: [TypewriterHook[], Dispatch<SetStateAction<TypewriterHook[]>>] = useState([
-    UseTypewriter({initialDelay: 750, typingSpeed: 100 , text: "LANDING PAGE"}),
-    UseTypewriter({initialDelay: 1500, typingSpeed: 100, text: "ІНТЕРНЕТ-МАГАЗИН"}),
-    UseTypewriter({initialDelay: 2250, typingSpeed: 100, text: "БІЗНЕС САЙТ"})
-  ]);
+  const [startTyping, setStartTyping] = useState(false);
   
 
   const handleScroll = () => {
@@ -42,15 +36,18 @@ export const SubMenu = () => {
     if (scrollPosition >= 200) {
       setTimeout(() => {
         animateLine();
-
-
-      }, 500);
+        setStartTyping(true);
+      }, 250);
+    } else {
+      setStartTyping(false);
     }
+
+
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrollPosition, typedElements]);
+  }, [scrollPosition]);
 
   return (
     <div className={`bg3 ${styles.under_bg}`}>
@@ -75,8 +72,8 @@ export const SubMenu = () => {
               strokeWidth="8"
             />
           </svg>
-          <h4 className={`h4 c1 bold montserrat ${styles.title}`}>
-            {typedElements[0].typedText}
+          <h4 className={`h4 c1 bold montserrat ${styles.title}`} key={0}>
+            <Typewriter text="LANDING PAGE" triggerTyping={startTyping} />
           </h4> 
           <svg
             className={styles.line}
@@ -97,8 +94,8 @@ export const SubMenu = () => {
               strokeWidth="8"
             />
           </svg>
-          <h4 className={`h4 c1 bold montserrat ${styles.title}`}>
-            {/* <Typewriter /> */}
+          <h4 className={`h4 c1 bold montserrat ${styles.title}`} key={1}>
+            <Typewriter text="ІНТЕРНЕТ-МАГАЗИН" triggerTyping={startTyping} />
           </h4>
           <svg
             className={styles.line}
@@ -120,8 +117,8 @@ export const SubMenu = () => {
             />
           </svg>
 
-          <h4 className={`h4 c1 bold montserrat ${styles.title}`}>
-            {/* <Typewriter /> */}
+          <h4 className={`h4 c1 bold montserrat ${styles.title}`} key={2}>
+          
           </h4>
         </div>
       </div>
