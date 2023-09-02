@@ -1,0 +1,69 @@
+.ads_strategy{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.yellow_rectangle{
+  padding: 82px 77px 82px 26%;
+  width: 35%;
+  height: 30%;
+}
+
+.yellow_rectangle__text{
+  text-align: center;
+}
+
+.ads_strategy__photo{
+  position: absolute;
+  left: 0;
+  top: 10%;
+  transform: translateX(0), translateY(10%);
+  transition: box-shadow 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.ads_strategy__photo:hover{
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.title_block{
+  margin: 257.5px 0 92.5px 10%;
+  align-self: flex-start;
+}
+
+.title{
+  position: relative;
+  letter-spacing: 1rem;
+}
+
+.line_yellow,
+.line_blue{
+  position: absolute;
+}
+
+.line_yellow{
+  left: 27.5%;
+  bottom: 37%;
+  transform: translate(0, 37%);
+}
+
+.line_blue{
+  left: 27.5%;
+  bottom: 23%;
+  transform: translate(0, -11.5%);
+}
+
+.text_block{
+  width: 70%;
+  align-self: flex-start;
+}
+
+.text_block > p{
+  margin-left: 14%;
+  font-size: 24px;
+  line-height: 50px;
+  color: #000000;
+}

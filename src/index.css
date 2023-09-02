@@ -80,6 +80,16 @@ code {
   line-height: 48.76px;
 }
 
+.h1-sm{
+  font-size: 36px;
+  line-height: 43.88px;
+}
+
+.h2{
+  font-size: 32px;
+  line-height: 50px;
+}
+
 .h3{
   font-size: 20px;
   line-height: 24.38px;

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./SubMenu.module.css";
 import anime from "animejs";
 import { Typewriter } from "../Typewriter/Typewriter";
+import { Debounce } from "../../hooks/Debounce";
 
 
 
@@ -17,6 +18,8 @@ export const SubMenu = () => {
     setScrollPosition(window.scrollY);
   };
 
+  const debouncedHandleScroll = Debounce(handleScroll, 200);
+
   const animateLine = () => {
     setDisplayLine(true);
     anime({
@@ -31,7 +34,7 @@ export const SubMenu = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", debouncedHandleScroll);
 
     if (scrollPosition >= 200) {
       setTimeout(() => {
@@ -45,9 +48,9 @@ export const SubMenu = () => {
 
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", debouncedHandleScroll);
     };
-  }, [scrollPosition]);
+  }, [scrollPosition, debouncedHandleScroll]);
 
   return (
     <div className={`bg3 ${styles.under_bg}`}>

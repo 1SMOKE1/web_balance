@@ -1,116 +1,13 @@
 import styles from "./main.module.css";
-import socialMedia from "./../../assets/social_media.png";
-import logo from "../../assets/logo.svg";
-import { useEffect, useState } from "react";
-import anime from "animejs";
-import Aos from "aos";
-import 'aos/dist/aos.css';
-import { SubMenu } from "../SubMenu/SubMenu";
+import { Site } from "../Site/Site";
+import { AdsStratagy } from "../AdsStratagy/AdsStrategy";
 
 export const Main = () => {
-  const [displayLine, setDisplayLine] = useState(false);
-
-  const animateLine = () => {
-    setDisplayLine(true);
-    anime({
-      targets: ".st0, .st1",
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: "cubicBezier(.5, .05, .1, .3)",
-      duration: 1000,
-      delay: function (el, i) {
-        return i * 250;
-      },
-    });
-  };
-
-  useEffect(() => {
-    Aos.init()
-    setTimeout(() => {
-      animateLine();
-    }, 500);
-  }, []);
 
   return (
-    <main className={styles.main} id="main-anchor">
-      <div className="container">
-        <div className={styles.main_bg}>
-          <div className={styles.content}>
-            <div className={styles.logo_block}>
-              <img className={styles.logo} src={logo} alt="" />
-              <h3 className={`montserrat semi-bold h3 c2`}>Web-balance</h3>
-            </div>
-            <div className={styles.content_container}>
-              <h1 className={`${styles.content_title} montserrat black h1 c2`}>
-                САЙТИ ПІД КЛЮЧ
-              </h1>
-              <svg
-                width="100%"
-                height="200px"
-                viewBox="0 0 1133 176"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{
-                  fill: "none",
-                  display: displayLine ? "block" : "none",
-                }}
-                className={styles.yellow_line}
-              >
-                <path
-                  className="st0"
-                  d="M0.5 173.5H556.5L786.5 75.5H972L1131.5 3"
-                  stroke="#F7C667"
-                  strokeWidth="5"
-                />
-              </svg>
-              <h3
-                className={`${styles.content_title} montserrat semi-bold h3 c2`}
-              >
-                Тільки для прогресивного бізнесу
-              </h3>
-              <svg
-                width="100%"
-                height="200px"
-                viewBox="0 0 1133 176"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{
-                  fill: "none",
-                  display: displayLine ? "block" : "none",
-                }}
-                className={styles.light_blue_line}
-              >
-                <path
-                  className="st0"
-                  d="M0 173.5H556L786 75.5H971.5L1131 3"
-                  stroke="#8BD2D8"
-                  strokeWidth="5"
-                />
-              </svg>
-
-              <ul className="montserrat semi-bold p c2">
-                <li>Розробляємо</li>
-                <li>Навчаємо</li>
-                <li>Супроводжуємо</li>
-              </ul>
-            </div>
-            <img data-aos="zoom-in" data-aos-anchor="#main-anchor" className={styles.social_media} src={socialMedia} alt="" />
-            <div className={styles.form_block}>
-              <input
-                className="bg3 p bold"
-                type="text"
-                placeholder="Ваше ім'я?"
-              />
-              <input
-                className="bg3 p bold"
-                type="text"
-                placeholder="Номер телефону..."
-              />
-              <button className="bg4 c2 p bold">Замовити дзвінок</button>
-            </div>
-          </div>
-        </div>
-        <SubMenu />
-      </div>
+    <main className={styles.main}>
+      <Site />
+      <AdsStratagy />
     </main>
   );
 };
