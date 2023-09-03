@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { SubMenu } from "../SubMenu/SubMenu";
 import styles from "./Site.module.css";
 import logo from "../../assets/logo.svg";
+import socialMedia from '../../assets/social_media.png'
 import "aos/dist/aos.css";
+import { ConsultationForm } from "../ConsultationForm/ConsultationForm";
 
 export const Site = () => {
   const [displayLine, setDisplayLine] = useState(false);
@@ -47,7 +49,7 @@ export const Site = () => {
   }, [scrollPosition]);
 
   return (
-    <section id="main-anchor">
+    <section>
       <div className="container">
         <div className={styles.content_wrap}>
           <div className={styles.site_bg}>
@@ -106,32 +108,20 @@ export const Site = () => {
                   />
                 </svg>
 
-                <ul className="montserrat semi-bold p c2">
+                <ul className="montserrat semi-bold p c2" >
                   <li>Розробляємо</li>
                   <li>Навчаємо</li>
                   <li>Супроводжуємо</li>
                 </ul>
               </div>
-              {/* <img
+              <img
                 data-aos="zoom-in"
                 data-aos-anchor="#main-anchor"
                 className={styles.social_media}
                 src={socialMedia}
                 alt=""
-              /> */}
-              <div className={styles.form_block}>
-                <input
-                  className="bg3 p bold"
-                  type="text"
-                  placeholder="Ваше ім'я?"
-                />
-                <input
-                  className="bg3 p bold"
-                  type="text"
-                  placeholder="Номер телефону..."
-                />
-                <button className="bg4 c2 p bold">Замовити дзвінок</button>
-              </div>
+              />
+              <ConsultationForm blockWidth="62%" />
             </div>
           </div>
           <SubMenu />

@@ -1,20 +1,38 @@
 .about_section{
   position: relative;
   margin-top: 132px;
+  padding-bottom: 88px;
 }
 
 .rectangle{
   width: 42%;
   padding: 65px 18% 65px 13%; 
+  margin-bottom: 98px;
 }
 
-.rectangle_text{
+.rectangle__text{
   text-align: center;
 }
 
-.about_photo{
+.about__photo{
   position: absolute;
-  top: 30%;
-  right: 5%;
+  top: 25%;
+  left: 95%;
+  transform: translate(-95%, -25%);
+}
 
+.content{
+  margin: 0 0 0 98px;
+}
+
+.content__title{
+  margin-bottom: 112px;
+  letter-spacing: 1rem;
+}
+
+.content__text{
+  width: 52%;
+  font-weight: 500;
+  line-height: 50px;
+  margin-bottom: 58px;
 }

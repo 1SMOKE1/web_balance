@@ -1,0 +1,27 @@
+.form__block{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__block button,
+.form__block input[type=text]{
+  width: calc(85% / 3);
+  outline: none;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow .3s ease;
+}
+
+.form__block input[type=text]{
+  padding: 10px 0 10px 36.4px;
+}
+
+.form__block input[type=text]::placeholder{
+  color: var(--color-5);
+}
+
+.form__block input[type=text]:focus,
+.form__block button:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}

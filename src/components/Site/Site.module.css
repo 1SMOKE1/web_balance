@@ -1,5 +1,3 @@
-
-
 .site_bg{
   background-image: 
   linear-gradient(#10808C52, #10808C52),
@@ -33,9 +31,9 @@
 .social_media{
   position: absolute;
   width: 40%;
-  bottom: 5%;
-  right: 3%;
-  transform: translate(3%, 5%);
+  top: 15%;
+  left: 60%;
+  transform: translate(-60%, -15%);
   z-index: 1000;
 }
 
@@ -60,35 +58,6 @@
 
 .content_container > ul > li:last-child{
   margin-bottom: 0;
-}
-
-.form_block{
-  width: 62%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.form_block button,
-.form_block input[type=text]{
-  width: calc(85% / 3);
-  outline: none;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: box-shadow .3s ease;
-}
-
-.form_block input[type=text]{
-  padding: 10px 0 10px 36.4px;
-}
-
-.form_block input[type=text]::placeholder{
-  color: var(--color-5);
-}
-
-.form_block input[type=text]:focus,
-.form_block button:hover{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .yellow_line,
