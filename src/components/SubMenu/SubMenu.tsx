@@ -4,21 +4,16 @@ import anime from "animejs";
 import { Typewriter } from "../Typewriter/Typewriter";
 import { Debounce } from "../../hooks/Debounce";
 
-
-
-
 export const SubMenu = () => {
-
   const [displayLine, setDisplayLine] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [startTyping, setStartTyping] = useState(false);
-  
 
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
   };
 
-  const debouncedHandleScroll = Debounce(handleScroll, 200);
+  const debouncedHandleScroll = Debounce(handleScroll, 500);
 
   const animateLine = () => {
     setDisplayLine(true);
@@ -44,8 +39,6 @@ export const SubMenu = () => {
     } else {
       setStartTyping(false);
     }
-
-
 
     return () => {
       window.removeEventListener("scroll", debouncedHandleScroll);
@@ -76,8 +69,12 @@ export const SubMenu = () => {
             />
           </svg>
           <h4 className={`h4 c1 bold montserrat ${styles.title}`} key={0}>
-            <Typewriter text="LANDING PAGE" triggerTyping={startTyping} speed={50}/>
-          </h4> 
+            <Typewriter
+              text="LANDING PAGE"
+              triggerTyping={startTyping}
+              speed={50}
+            />
+          </h4>
           <svg
             className={styles.line}
             width="11"
@@ -98,7 +95,11 @@ export const SubMenu = () => {
             />
           </svg>
           <h4 className={`h4 c1 bold montserrat ${styles.title}`} key={1}>
-            <Typewriter text="ІНТЕРНЕТ-МАГАЗИН" triggerTyping={startTyping} speed={150}/>
+            <Typewriter
+              text="ІНТЕРНЕТ-МАГАЗИН"
+              triggerTyping={startTyping}
+              speed={150}
+            />
           </h4>
           <svg
             className={styles.line}
@@ -121,7 +122,11 @@ export const SubMenu = () => {
           </svg>
 
           <h4 className={`h4 c1 bold montserrat ${styles.title}`} key={2}>
-            <Typewriter text="БІЗНЕС САЙТ" triggerTyping={startTyping} speed={225}/>
+            <Typewriter
+              text="БІЗНЕС САЙТ"
+              triggerTyping={startTyping}
+              speed={225}
+            />
           </h4>
         </div>
       </div>

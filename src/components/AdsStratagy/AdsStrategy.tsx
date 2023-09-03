@@ -14,7 +14,7 @@ export const AdsStratagy = () => {
     setScrollPosition(window.scrollY);
   };
 
-  const debouncedHandleScroll = Debounce(handleScroll, 200);
+  const debouncedHandleScroll = Debounce(handleScroll, 500);
 
   const animateLine = () => {
     setDisplayLine(true);
@@ -33,9 +33,7 @@ export const AdsStratagy = () => {
     Aos.init();
     window.addEventListener("scroll", debouncedHandleScroll);
 
-    console.log(scrollPosition);
-
-    if (scrollPosition >= 1300) {
+    if (scrollPosition >= 800) {
       setTimeout(() => {
         animateLine();
       }, 250);

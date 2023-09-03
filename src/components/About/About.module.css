@@ -1,0 +1,20 @@
+.about_section{
+  position: relative;
+  margin-top: 132px;
+}
+
+.rectangle{
+  width: 42%;
+  padding: 65px 18% 65px 13%; 
+}
+
+.rectangle_text{
+  text-align: center;
+}
+
+.about_photo{
+  position: absolute;
+  top: 30%;
+  right: 5%;
+
+}

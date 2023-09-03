@@ -1,3 +1,7 @@
+.ads_strategy__section{
+  margin-bottom: 47px;
+}
+
 .ads_strategy{
   position: relative;
   display: flex;
@@ -46,19 +50,20 @@
 
 .line_yellow{
   left: 27.5%;
-  bottom: 37%;
-  transform: translate(0, 37%);
+  bottom: 41%;
+  transform: translate(0, 41%);
 }
 
 .line_blue{
   left: 27.5%;
-  bottom: 23%;
-  transform: translate(0, -11.5%);
+  bottom: 24%;
+  transform: translate(0, -24%);
 }
 
 .text_block{
   width: 70%;
   align-self: flex-start;
+  margin-bottom: 47px;
 }
 
 .text_block > p{
