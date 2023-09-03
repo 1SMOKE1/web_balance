@@ -1,6 +1,7 @@
 import styles from "./header.module.css";
 import logo from "./../../assets/logo.svg";
-import phoneIcon from "./../../assets/phone_icon.svg";
+import { Phone } from "../Phone/Phone";
+
 
 export const Header = () => {
   return (
@@ -12,12 +13,7 @@ export const Header = () => {
             Web-balance
           </a>
         </div>
-        <div className={styles.phone_block}>
-          <img src={phoneIcon} alt="" />
-          <a href="ok" className={`montserrat semi-bold c1 h4`}>
-            095 489 58 75
-          </a>
-        </div>
+        <Phone color="#04454B" />
       </div>
     </header>
   );

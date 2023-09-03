@@ -1,0 +1,13 @@
+.phone__block{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone_block > img{
+  margin-right: 18px;
+}
+
+.phone{
+  margin-right: 20px;
+}

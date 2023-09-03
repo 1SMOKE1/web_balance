@@ -16,18 +16,6 @@
   margin-bottom: 70px;
 }
 
-.logo{
-  width: 200px;
-}
-
-.logo_block{
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .social_media{
   position: absolute;
   width: 40%;

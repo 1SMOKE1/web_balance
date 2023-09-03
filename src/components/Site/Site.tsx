@@ -3,10 +3,11 @@ import Aos from "aos";
 import { useState, useEffect } from "react";
 import { SubMenu } from "../SubMenu/SubMenu";
 import styles from "./Site.module.css";
-import logo from "../../assets/logo.svg";
+
 import socialMedia from '../../assets/social_media.png'
 import "aos/dist/aos.css";
 import { ConsultationForm } from "../ConsultationForm/ConsultationForm";
+import { Logo } from "../Logo/Logo";
 
 export const Site = () => {
   const [displayLine, setDisplayLine] = useState(false);
@@ -49,15 +50,12 @@ export const Site = () => {
   }, [scrollPosition]);
 
   return (
-    <section>
+    <section id="main-anchor" >
       <div className="container">
         <div className={styles.content_wrap}>
           <div className={styles.site_bg}>
             <div className={styles.content}>
-              <div className={styles.logo_block}>
-                <img className={styles.logo} src={logo} alt="" />
-                <h3 className={`montserrat semi-bold h3 c2`}>Web-balance</h3>
-              </div>
+              <Logo />
               <div className={styles.content_container}>
                 <h1
                   className={`${styles.content_title} montserrat black h1 c2`}
@@ -117,6 +115,7 @@ export const Site = () => {
               <img
                 data-aos="zoom-in"
                 data-aos-anchor="#main-anchor"
+                data-aos-anchor-placement="top"
                 className={styles.social_media}
                 src={socialMedia}
                 alt=""

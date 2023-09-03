@@ -16,9 +16,9 @@
 
 .about__photo{
   position: absolute;
-  top: 25%;
-  left: 95%;
-  transform: translate(-95%, -25%);
+  top: 10%;
+  left: 60%;
+  transform: translate(-60%, -10%);
 }
 
 .content{
